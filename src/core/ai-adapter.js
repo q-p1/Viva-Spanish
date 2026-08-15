@@ -1,6 +1,11 @@
 (function(root){
   const V=root.VIVA;
-  function endpoint(){return (V.store.state.settings.aiEndpoint||'').replace(/\/$/,'');}
+  function endpoint(){
+    const saved=(V.store.state.settings.aiEndpoint||'').trim();
+    if(saved)return saved.replace(/\/$/,'');
+    if(typeof location!=='undefined' && /\.vercel\.app$/i.test(location.hostname)) return `${location.origin}/api/ai`;
+    return '';
+  }
   async function call(payload){
     const url=endpoint();if(!url)return null;
     const res=await fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});
