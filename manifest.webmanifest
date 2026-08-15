@@ -1,0 +1,9 @@
+{
+  "name": "VIVA — Spanish that adapts to you",
+  "short_name": "VIVA",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0d0908",
+  "theme_color": "#0d0908",
+  "description": "Adaptive Spanish learning game with memory modeling, real-life missions, and conversation practice."
+}

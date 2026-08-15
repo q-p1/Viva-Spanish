@@ -1,0 +1,13 @@
+{
+  "name": "viva-spanish",
+  "version": "0.5.0",
+  "private": true,
+  "description": "Adaptive Spanish learning game with memory modeling and real-life missions.",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "build": "node scripts/build-standalone.js",
+    "check": "npm test && npm run build",
+    "serve": "python3 -m http.server 4173"
+  },
+  "engines": {"node": ">=20"}
+}

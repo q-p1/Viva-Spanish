@@ -1,0 +1,5 @@
+const CACHE='viva-v5';
+const CORE=['./','./index.html','./styles/tokens.css','./styles/base.css','./styles/components.css','./styles/responsive.css','./src/core/namespace.js','./src/data/content.js','./src/core/store.js','./src/learning/answer-analyzer.js','./src/learning/scheduler.js','./src/learning/mastery.js','./src/learning/coach.js','./src/ui/audio.js','./src/ui/microphone.js','./src/ui/helpers.js','./src/features/home.js','./src/features/journey.js','./src/features/coach.js','./src/features/labs.js','./src/features/vault.js','./src/features/passport.js','./src/features/story.js','./src/core/app.js'];
+self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE))));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k))))));
+self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(res=>{const copy=res.clone();caches.open(CACHE).then(c=>c.put(e.request,copy));return res;}).catch(()=>caches.match('./index.html')))));
