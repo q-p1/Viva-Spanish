@@ -1,7 +1,7 @@
 'use strict';
 
 const DEFAULTS = Object.freeze({
-  groq: { model: 'llama-3.3-70b-versatile', baseUrl: 'https://api.groq.com/openai/v1' },
+  groq: { model: 'openai/gpt-oss-120b', baseUrl: 'https://api.groq.com/openai/v1' },
   gemini: { model: 'gemini-3.5-flash', baseUrl: 'https://generativelanguage.googleapis.com/v1beta' },
   openrouter: { model: 'openrouter/free', baseUrl: 'https://openrouter.ai/api/v1' },
   huggingface: { model: 'google/gemma-2-2b-it:fastest', baseUrl: 'https://router.huggingface.co/v1' },
