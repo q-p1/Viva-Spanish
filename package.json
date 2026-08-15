@@ -1,13 +1,16 @@
 {
   "name": "viva-spanish",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "private": true,
-  "description": "Adaptive Spanish learning world with personal memory modeling, Madrid simulation, missions, and multimodal labs.",
+  "description": "Adaptive Spanish learning world with a multi-provider AI gateway, personal memory modeling, Madrid simulation, missions, and multimodal labs.",
   "scripts": {
     "test": "node --test tests/*.test.js",
     "build": "node scripts/build-standalone.js",
     "check": "npm test && npm run build",
-    "serve": "python3 -m http.server 4173"
+    "serve": "python3 -m http.server 4173",
+    "ai:serve": "node server/dev-server.js"
   },
-  "engines": {"node": ">=20"}
+  "engines": {
+    "node": ">=20"
+  }
 }

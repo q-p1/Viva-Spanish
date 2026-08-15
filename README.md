@@ -41,9 +41,16 @@ Open `http://localhost:4173`.
 
 `npm run build` creates `dist/viva-standalone.html` for single-file testing.
 
-## Optional AI backend
 
-VIVA works without a remote AI service. Open-ended NPCs use local fallbacks. A secure backend can be configured in Settings for richer conversation, scan/OCR and generated adventures. **Never put an API key in the browser.** See `docs/AI-PROVIDER.md`.
+## Multi-provider AI
+
+VIVA now includes a server-side AI gateway with automatic failover across **Groq, Gemini, OpenRouter, and Hugging Face**. Groq Whisper can also transcribe Spanish speech. The browser never receives API keys. See `docs/AI-PROVIDER.md` and `.env.example`.
+
+```bash
+npm run ai:serve
+```
+
+Then set the gateway URL in VIVA Settings and use **Test gateway**. If no provider is configured or every free quota is exhausted, VIVA keeps working with its local deterministic fallbacks.
 
 ## Structure
 
