@@ -1,6 +1,6 @@
 (function(root){
   const V = root.VIVA = root.VIVA || {};
-  V.version = "0.5.0";
+  V.version = "0.7.0";
   V.bus = {
     listeners: {},
     on(name, fn){ (this.listeners[name] ||= []).push(fn); },
