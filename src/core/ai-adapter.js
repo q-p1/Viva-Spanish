@@ -26,6 +26,6 @@
     async generateAdventure(context){try{return await call({type:'adventure',context});}catch(e){return null;}},
     async transcribeAudio(audio,language='es'){try{return await call({type:'transcription',audio,language});}catch(e){return null;}},
     async status(){try{return await call({type:'status'});}catch(e){return null;}},
-    provider(){return endpoint()?'multi-provider-gateway':'local-fallback';}
+    provider(){return endpoint()?'remote':'local-fallback';}
   };
 })(typeof globalThis!=='undefined'?globalThis:window);
